@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 
 using namespace std;
 
@@ -10,15 +9,18 @@ private:
     double height;
 
 public:
-    void dataInput() {
-        cout << "Enter name: ";
-        cin >> name;
-        cout << "Enter age: ";
-        cin >> age;
-    }
-
     void displayInfo() {
         cout << "User name: " << getName() << endl << "User age: " << getAge() << endl;
+    }
+
+public:
+    void setName() {
+        cout << "Enter user name: ";
+        cin >> name;
+    }
+    void setAge() {
+        cout << "Enter user age: ";
+        cin >> age;
     }
 
 private:
@@ -49,7 +51,8 @@ public:
 int main() {
     Person person;
 
-    person.dataInput();
+    person.setName();
+    person.setAge();
     person.sayHelloToUser();
     person.displayInfo();
     person.howOldAreUser();
